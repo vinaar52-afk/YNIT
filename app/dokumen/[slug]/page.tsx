@@ -1,28 +1,128 @@
 import Section from '@/components/Section';
+import Card from '@/components/Card';
+import CTA from '@/components/CTA';
+import { dokumen } from '@/data/dokumen';
+import { notFound } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
+import { formatCurrency } from '@/lib/format';
 
-interface DokumenSlugPageProps {
+interface DokumenDetailPageProps {
   params: {
     slug: string;
   };
 }
 
-export default function DokumenSlugPage({ params }: DokumenSlugPageProps) {
+export default function DokumenDetailPage({ params }: DokumenDetailPageProps) {
+  const doc = dokumen.find((d) => d.slug === params.slug);
+
+  if (!doc) {
+    notFound();
+  }
+
+  const relatedDocs = dokumen.filter((d) => d.id !== doc.id).slice(0, 3);
+
   return (
-    <Section className="pt-20">
-      <div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Dokumen: {params.slug}</h1>
-        <p className="text-gray-600 mb-8">
-          Detail untuk dokumen: <span className="font-semibold">{params.slug}</span>
-        </p>
-        <div className="bg-gray-50 p-8 rounded-lg">
-          <p className="text-gray-700 mb-4">
-            Halaman ini menampilkan detail untuk dokumen Anda.
-          </p>
-          <p className="text-gray-600">
-            Slug: <span className="font-mono text-sm">{params.slug}</span>
-          </p>
+    <>
+      {/* Hero with Image */}
+      <section className="relative w-full h-96 bg-gradient-to-b from-[#1a1a1a] to-[#111]">
+        <div className="absolute inset-0">
+          <Image
+            src={doc.image}
+            alt={doc.title}
+            fill
+            className="object-cover opacity-50"
+            onError={(e) => {
+              const img = e.target as HTMLImageElement;
+              img.src = '/placeholder.png';
+            }}
+          />
         </div>
-      </div>
-    </Section>
+        <div className="relative z-10 h-full flex items-end pt-20">
+          <div className="section-container w-full">
+            <h1 className="text-5xl md:text-6xl font-bold text-[#f7f7f7] mb-4">{doc.title}</h1>
+            <div className="flex flex-wrap gap-4 items-center">
+              <span className="bg-[#22D3EE] text-[#111] px-4 py-2 rounded-lg font-semibold">
+                {doc.processingTime}
+              </span>
+              <span className="text-3xl font-bold text-[#22D3EE]">{formatCurrency(doc.price)}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Details Section */}
+      <Section className="bg-[#111]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2">
+            {/* Description */}
+            <div className="card-dark mb-8">
+              <h2 className="text-2xl font-bold text-[#f7f7f7] mb-4">Service Details</h2>
+              <p className="text-[#b7b7b7] leading-relaxed text-lg mb-6">{doc.description}</p>
+            </div>
+
+            {/* Requirements */}
+            <div className="card-dark">
+              <h2 className="text-2xl font-bold text-[#f7f7f7] mb-4">Required Documents</h2>
+              <ul className="space-y-3">
+                {doc.requirements.map((req, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="text-[#22D3EE] text-xl mt-1">📋</span>
+                    <span className="text-[#b7b7b7] text-lg">{req}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Booking Card */}
+          <div>
+            <div className="card-dark sticky top-32 p-8">
+              <h3 className="text-2xl font-bold text-[#f7f7f7] mb-6">Get This Service</h3>
+              <div className="space-y-4 mb-6">
+                <div>
+                  <p className="text-[#b7b7b7] text-sm mb-1">Processing Time</p>
+                  <p className="text-[#f7f7f7] font-semibold text-lg">{doc.processingTime}</p>
+                </div>
+                <div>
+                  <p className="text-[#b7b7b7] text-sm mb-1">Price</p>
+                  <p className="text-[#22D3EE] font-bold text-2xl">{formatCurrency(doc.price)}</p>
+                </div>
+              </div>
+              <Link href="/booking">
+                <button className="btn-neon w-full mb-4">Start Now</button>
+              </Link>
+              <button className="btn-neon-outline w-full">Get Consultation</button>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Related Services */}
+      {relatedDocs.length > 0 && (
+        <Section title="Other Services" subtitle="Explore our other document services">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {relatedDocs.map((relatedDoc) => (
+              <Card
+                key={relatedDoc.id}
+                title={relatedDoc.title}
+                description={relatedDoc.shortDesc}
+                href={`/dokumen/${relatedDoc.slug}`}
+                price={relatedDoc.price}
+                image={relatedDoc.image}
+                badge={relatedDoc.processingTime}
+              />
+            ))}
+          </div>
+        </Section>
+      )}
+
+      <CTA
+        title="Ready to Get Started?"
+        description="Let our experts handle your document needs professionally"
+        buttonText="Apply Now"
+        buttonHref="/booking"
+      />
+    </>
   );
 }

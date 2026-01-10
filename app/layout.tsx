@@ -4,8 +4,11 @@ import Footer from '@/components/Footer';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: 'YNIT - Layanan Profesional',
-  description: 'YNIT menyediakan layanan tour, dokumen, study, dan medical terpercaya',
+  title: 'YNIT - Professional Services',
+  description: 'YNIT provides tour, document, study, and medical services with excellence and reliability.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -14,10 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
-      <body>
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body className="bg-[#111] text-[#f7f7f7]">
         <Header />
-        <main>{children}</main>
+        <main className="pt-20">{children}</main>
         <Footer />
       </body>
     </html>

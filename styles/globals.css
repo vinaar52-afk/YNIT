@@ -4,14 +4,46 @@
 
 @layer base {
   body {
-    @apply bg-white text-gray-700;
+    @apply bg-[#111] text-[#f7f7f7];
+    font-family: 'Inter', 'Poppins', sans-serif;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
-    @apply text-gray-900 font-semibold;
+    @apply font-bold text-[#f7f7f7];
   }
-  
+
   a {
-    @apply text-blue-600 hover:text-blue-800 transition-colors;
+    @apply transition-colors duration-300;
   }
 }
+
+@layer components {
+  .neon-glow {
+    @apply shadow-lg shadow-cyan-500/50;
+  }
+
+  .neon-hover {
+    @apply hover:shadow-lg hover:shadow-cyan-500/50 transition-shadow duration-300;
+  }
+
+  .btn-neon {
+    @apply bg-[#22D3EE] text-[#111] font-semibold px-6 py-3 rounded-2xl hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300;
+  }
+
+  .btn-neon-outline {
+    @apply border-2 border-[#22D3EE] text-[#22D3EE] font-semibold px-6 py-3 rounded-2xl hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300;
+  }
+
+  .card-dark {
+    @apply bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-6 neon-hover;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
+  }
+
+  .hero-section {
+    @apply min-h-screen bg-gradient-to-b from-[#111] to-[#1a1a1a] flex items-center;
+  }
+}
+

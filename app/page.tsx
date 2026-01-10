@@ -1,47 +1,193 @@
 import Section from '@/components/Section';
 import Card from '@/components/Card';
 import CTA from '@/components/CTA';
+import { tours } from '@/data/tours';
+import { dokumen } from '@/data/dokumen';
+import { study } from '@/data/study';
+import { medical } from '@/data/medical';
+import Link from 'next/link';
 
 export default function Home() {
+  const featuredTours = tours.slice(0, 2);
+  const featuredDokumen = dokumen.slice(0, 2);
+  const featuredStudy = study.slice(0, 2);
+  const featuredMedical = medical.slice(0, 2);
+
   return (
     <>
-      <Section className="pt-20">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Selamat Datang di YNIT
+      {/* Hero Section */}
+      <section className="hero-section pt-20">
+        <div className="section-container text-center">
+          <h1 className="text-5xl md:text-7xl font-bold text-[#f7f7f7] mb-6 leading-tight">
+            Welcome to <span className="text-[#22D3EE] neon-glow">YNIT</span>
           </h1>
-          <p className="text-xl text-gray-600">
-            Layanan profesional untuk kebutuhan Anda
+          <p className="text-xl md:text-2xl text-[#b7b7b7] mb-8 max-w-3xl mx-auto">
+            Your trusted partner for exceptional tour experiences, document services, educational programs, and premium medical care
           </p>
+          <Link href="/booking">
+            <button className="btn-neon text-lg">
+              Get Started
+            </button>
+          </Link>
         </div>
-      </Section>
+      </section>
 
-      <Section>
+      {/* Service Categories */}
+      <Section title="Our Services" subtitle="Explore our comprehensive range of professional services">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card
-            title="Tour"
-            description="Jelajahi destinasi menarik dengan panduan profesional kami"
-            href="/tour"
-          />
-          <Card
-            title="Dokumen"
-            description="Urus semua kebutuhan dokumen Anda dengan mudah dan cepat"
-            href="/dokumen"
-          />
-          <Card
-            title="Study"
-            description="Program pendidikan berkualitas untuk pengembangan diri Anda"
-            href="/study"
-          />
-          <Card
-            title="Medical"
-            description="Layanan kesehatan terpercaya untuk kesejahteraan Anda"
-            href="/medical"
-          />
+          <Link href="/tour">
+            <div className="card-dark cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
+              <div className="text-5xl mb-4">✈️</div>
+              <h3 className="text-2xl font-bold text-[#f7f7f7] mb-2">Tour</h3>
+              <p className="text-[#b7b7b7] text-sm">Explore amazing destinations</p>
+            </div>
+          </Link>
+
+          <Link href="/dokumen">
+            <div className="card-dark cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
+              <div className="text-5xl mb-4">📄</div>
+              <h3 className="text-2xl font-bold text-[#f7f7f7] mb-2">Dokumen</h3>
+              <p className="text-[#b7b7b7] text-sm">Professional document services</p>
+            </div>
+          </Link>
+
+          <Link href="/study">
+            <div className="card-dark cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
+              <div className="text-5xl mb-4">📚</div>
+              <h3 className="text-2xl font-bold text-[#f7f7f7] mb-2">Study</h3>
+              <p className="text-[#b7b7b7] text-sm">Quality education programs</p>
+            </div>
+          </Link>
+
+          <Link href="/medical">
+            <div className="card-dark cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
+              <div className="text-5xl mb-4">⚕️</div>
+              <h3 className="text-2xl font-bold text-[#f7f7f7] mb-2">Medical</h3>
+              <p className="text-[#b7b7b7] text-sm">Premium healthcare services</p>
+            </div>
+          </Link>
         </div>
       </Section>
 
-      <CTA />
+      {/* Featured Tours */}
+      <Section title="Featured Tours" subtitle="Discover our most popular tour packages">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featuredTours.map((tour) => (
+            <Card
+              key={tour.id}
+              title={tour.title}
+              description={tour.shortDesc}
+              href={`/tour/${tour.slug}`}
+              price={tour.price}
+              image={tour.image}
+              badge={tour.duration}
+            />
+          ))}
+          {featuredTours.map((tour) => (
+            <Card
+              key={`alt-${tour.id}`}
+              title={tour.title}
+              description={tour.shortDesc}
+              href={`/tour/${tour.slug}`}
+              price={tour.price}
+              image={tour.image}
+              badge={tour.duration}
+            />
+          ))}
+        </div>
+      </Section>
+
+      {/* Featured Documents */}
+      <Section title="Document Services" subtitle="Professional document processing made easy">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featuredDokumen.map((doc) => (
+            <Card
+              key={doc.id}
+              title={doc.title}
+              description={doc.shortDesc}
+              href={`/dokumen/${doc.slug}`}
+              price={doc.price}
+              image={doc.image}
+              badge={doc.processingTime}
+            />
+          ))}
+          {featuredDokumen.map((doc) => (
+            <Card
+              key={`alt-${doc.id}`}
+              title={doc.title}
+              description={doc.shortDesc}
+              href={`/dokumen/${doc.slug}`}
+              price={doc.price}
+              image={doc.image}
+              badge={doc.processingTime}
+            />
+          ))}
+        </div>
+      </Section>
+
+      {/* Featured Study Programs */}
+      <Section title="Study Programs" subtitle="Invest in your education and future">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featuredStudy.map((prog) => (
+            <Card
+              key={prog.id}
+              title={prog.title}
+              description={prog.shortDesc}
+              href={`/study/${prog.slug}`}
+              price={prog.price}
+              image={prog.image}
+              badge={prog.duration}
+            />
+          ))}
+          {featuredStudy.map((prog) => (
+            <Card
+              key={`alt-${prog.id}`}
+              title={prog.title}
+              description={prog.shortDesc}
+              href={`/study/${prog.slug}`}
+              price={prog.price}
+              image={prog.image}
+              badge={prog.duration}
+            />
+          ))}
+        </div>
+      </Section>
+
+      {/* Featured Medical */}
+      <Section title="Medical Services" subtitle="Your health and wellness is our priority">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featuredMedical.map((med) => (
+            <Card
+              key={med.id}
+              title={med.title}
+              description={med.shortDesc}
+              href={`/medical/${med.slug}`}
+              price={med.price}
+              image={med.image}
+              badge={med.duration}
+            />
+          ))}
+          {featuredMedical.map((med) => (
+            <Card
+              key={`alt-${med.id}`}
+              title={med.title}
+              description={med.shortDesc}
+              href={`/medical/${med.slug}`}
+              price={med.price}
+              image={med.image}
+              badge={med.duration}
+            />
+          ))}
+        </div>
+      </Section>
+
+      {/* CTA Section */}
+      <CTA
+        title="Ready to Experience Excellence?"
+        description="Join thousands of satisfied customers who trust YNIT for their needs"
+        buttonText="Book Your Service"
+        buttonHref="/booking"
+      />
     </>
   );
 }
