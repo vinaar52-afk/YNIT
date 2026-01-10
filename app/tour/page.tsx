@@ -10,10 +10,10 @@ export default function TourPage() {
       {/* Hero Section */}
       <section className="hero-section pt-20">
         <div className="section-container text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-[#f7f7f7] mb-6">
-            Discover Amazing <span className="text-[#22D3EE] neon-glow">Tours</span>
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            Discover Amazing <span className="text-red-600 warm-glow">Tours</span>
           </h1>
-          <p className="text-xl text-[#b7b7b7] max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Explore the world with our expertly curated tour packages
           </p>
         </div>
@@ -37,22 +37,22 @@ export default function TourPage() {
       </Section>
 
       {/* Why Choose Us */}
-      <Section className="bg-gradient-to-r from-[#111] via-[#0a0a0a] to-[#111]">
+      <Section className="bg-gradient-to-r from-orange-50 via-white to-orange-50">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="card-dark text-center py-8">
+          <div className="card-light text-center py-8">
             <div className="text-4xl mb-4">🌍</div>
-            <h3 className="text-xl font-bold text-[#f7f7f7] mb-2">Worldwide Destinations</h3>
-            <p className="text-[#b7b7b7]">Access to the most beautiful and exotic locations around the globe</p>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Worldwide Destinations</h3>
+            <p className="text-gray-600">Access to the most beautiful and exotic locations around the globe</p>
           </div>
-          <div className="card-dark text-center py-8">
+          <div className="card-light text-center py-8">
             <div className="text-4xl mb-4">👨‍🏫</div>
-            <h3 className="text-xl font-bold text-[#f7f7f7] mb-2">Expert Guides</h3>
-            <p className="text-[#b7b7b7]">Professional local guides with deep knowledge and cultural expertise</p>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Expert Guides</h3>
+            <p className="text-gray-600">Professional local guides with deep knowledge and cultural expertise</p>
           </div>
-          <div className="card-dark text-center py-8">
+          <div className="card-light text-center py-8">
             <div className="text-4xl mb-4">🛡️</div>
-            <h3 className="text-xl font-bold text-[#f7f7f7] mb-2">100% Safe</h3>
-            <p className="text-[#b7b7b7]">Full insurance coverage and 24/7 support throughout your journey</p>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">100% Safe</h3>
+            <p className="text-gray-600">Full insurance coverage and 24/7 support throughout your journey</p>
           </div>
         </div>
       </Section>

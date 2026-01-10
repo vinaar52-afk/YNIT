@@ -18,14 +18,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero-section pt-20">
         <div className="section-container text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-[#f7f7f7] mb-6 leading-tight">
-            Welcome to <span className="text-[#22D3EE] neon-glow">YNIT</span>
+          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            Welcome to <span className="text-red-600 warm-glow">YNIT</span>
           </h1>
-          <p className="text-xl md:text-2xl text-[#b7b7b7] mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Your trusted partner for exceptional tour experiences, document services, educational programs, and premium medical care
           </p>
           <Link href="/booking">
-            <button className="btn-neon text-lg">
+            <button className="btn-primary text-lg">
               Get Started
             </button>
           </Link>
@@ -36,34 +36,34 @@ export default function Home() {
       <Section title="Our Services" subtitle="Explore our comprehensive range of professional services">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Link href="/tour">
-            <div className="card-dark cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
+            <div className="card-light cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
               <div className="text-5xl mb-4">✈️</div>
-              <h3 className="text-2xl font-bold text-[#f7f7f7] mb-2">Tour</h3>
-              <p className="text-[#b7b7b7] text-sm">Explore amazing destinations</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Tour</h3>
+              <p className="text-gray-600 text-sm">Explore amazing destinations</p>
             </div>
           </Link>
 
           <Link href="/dokumen">
-            <div className="card-dark cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
+            <div className="card-light cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
               <div className="text-5xl mb-4">📄</div>
-              <h3 className="text-2xl font-bold text-[#f7f7f7] mb-2">Dokumen</h3>
-              <p className="text-[#b7b7b7] text-sm">Professional document services</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Dokumen</h3>
+              <p className="text-gray-600 text-sm">Professional document services</p>
             </div>
           </Link>
 
           <Link href="/study">
-            <div className="card-dark cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
+            <div className="card-light cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
               <div className="text-5xl mb-4">📚</div>
-              <h3 className="text-2xl font-bold text-[#f7f7f7] mb-2">Study</h3>
-              <p className="text-[#b7b7b7] text-sm">Quality education programs</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Study</h3>
+              <p className="text-gray-600 text-sm">Quality education programs</p>
             </div>
           </Link>
 
           <Link href="/medical">
-            <div className="card-dark cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
+            <div className="card-light cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
               <div className="text-5xl mb-4">⚕️</div>
-              <h3 className="text-2xl font-bold text-[#f7f7f7] mb-2">Medical</h3>
-              <p className="text-[#b7b7b7] text-sm">Premium healthcare services</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Medical</h3>
+              <p className="text-gray-600 text-sm">Premium healthcare services</p>
             </div>
           </Link>
         </div>

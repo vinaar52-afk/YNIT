@@ -25,13 +25,13 @@ export default function StudyDetailPage({ params }: StudyDetailPageProps) {
   return (
     <>
       {/* Hero with Image */}
-      <section className="relative w-full h-96 bg-gradient-to-b from-[#1a1a1a] to-[#111]">
+      <section className="relative w-full h-96 bg-gradient-to-b from-orange-50 to-white">
         <div className="absolute inset-0">
           <Image
             src={program.image}
             alt={program.title}
             fill
-            className="object-cover opacity-50"
+            className="object-cover opacity-30"
             onError={(e) => {
               const img = e.target as HTMLImageElement;
               img.src = '/placeholder.png';
@@ -40,35 +40,35 @@ export default function StudyDetailPage({ params }: StudyDetailPageProps) {
         </div>
         <div className="relative z-10 h-full flex items-end pt-20">
           <div className="section-container w-full">
-            <h1 className="text-5xl md:text-6xl font-bold text-[#f7f7f7] mb-4">{program.title}</h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">{program.title}</h1>
             <div className="flex flex-wrap gap-4 items-center">
-              <span className="bg-[#22D3EE] text-[#111] px-4 py-2 rounded-lg font-semibold">
+              <span className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">
                 {program.duration}
               </span>
-              <span className="text-3xl font-bold text-[#22D3EE]">{formatCurrency(program.price)}</span>
+              <span className="text-3xl font-bold text-red-600">{formatCurrency(program.price)}</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Details Section */}
-      <Section className="bg-[#111]">
+      <Section className="bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             {/* Description */}
-            <div className="card-dark mb-8">
-              <h2 className="text-2xl font-bold text-[#f7f7f7] mb-4">Program Overview</h2>
-              <p className="text-[#b7b7b7] leading-relaxed text-lg mb-6">{program.description}</p>
+            <div className="card-light mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Program Overview</h2>
+              <p className="text-gray-600 leading-relaxed text-lg mb-6">{program.description}</p>
             </div>
 
             {/* Subjects */}
-            <div className="card-dark">
-              <h2 className="text-2xl font-bold text-[#f7f7f7] mb-4">What You&apos;ll Learn</h2>
+            <div className="card-light">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">What You&apos;ll Learn</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {program.subjects.map((subject, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 bg-[#1a1a1a] rounded-lg">
-                    <span className="text-[#22D3EE] text-xl">→</span>
-                    <span className="text-[#b7b7b7] text-lg">{subject}</span>
+                  <div key={index} className="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
+                    <span className="text-red-600 text-xl">→</span>
+                    <span className="text-gray-600 text-lg">{subject}</span>
                   </div>
                 ))}
               </div>
@@ -77,22 +77,22 @@ export default function StudyDetailPage({ params }: StudyDetailPageProps) {
 
           {/* Enrollment Card */}
           <div>
-            <div className="card-dark sticky top-32 p-8">
-              <h3 className="text-2xl font-bold text-[#f7f7f7] mb-6">Enroll Now</h3>
+            <div className="card-light sticky top-32 p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Enroll Now</h3>
               <div className="space-y-4 mb-6">
                 <div>
-                  <p className="text-[#b7b7b7] text-sm mb-1">Program Duration</p>
-                  <p className="text-[#f7f7f7] font-semibold text-lg">{program.duration}</p>
+                  <p className="text-gray-600 text-sm mb-1">Program Duration</p>
+                  <p className="text-gray-900 font-semibold text-lg">{program.duration}</p>
                 </div>
                 <div>
-                  <p className="text-[#b7b7b7] text-sm mb-1">Investment</p>
-                  <p className="text-[#22D3EE] font-bold text-2xl">{formatCurrency(program.price)}</p>
+                  <p className="text-gray-600 text-sm mb-1">Investment</p>
+                  <p className="text-red-600 font-bold text-2xl">{formatCurrency(program.price)}</p>
                 </div>
               </div>
               <Link href="/booking">
-                <button className="btn-neon w-full mb-4">Enroll Today</button>
+                <button className="btn-primary w-full mb-4">Enroll Today</button>
               </Link>
-              <button className="btn-neon-outline w-full">Ask Questions</button>
+              <button className="btn-outline w-full">Ask Questions</button>
             </div>
           </div>
         </div>

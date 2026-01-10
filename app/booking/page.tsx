@@ -55,10 +55,10 @@ export default function BookingPage() {
       {/* Hero Section */}
       <section className="hero-section pt-20">
         <div className="section-container text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-[#f7f7f7] mb-6">
-            Book Your <span className="text-[#22D3EE] neon-glow">Service</span>
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            Book Your <span className="text-red-600 warm-glow">Service</span>
           </h1>
-          <p className="text-xl text-[#b7b7b7] max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Schedule your appointment with us today
           </p>
         </div>
@@ -68,17 +68,17 @@ export default function BookingPage() {
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Form */}
-          <div className="card-dark p-8">
+          <div className="card-light p-8">
             {isSubmitted ? (
               <div className="text-center py-12">
                 <div className="text-6xl mb-4">✓</div>
-                <h3 className="text-2xl font-bold text-[#22D3EE] mb-2">Booking Submitted!</h3>
-                <p className="text-[#b7b7b7]">We&apos;ll contact you soon to confirm your appointment.</p>
+                <h3 className="text-2xl font-bold text-red-600 mb-2">Booking Submitted!</h3>
+                <p className="text-gray-600">We&apos;ll contact you soon to confirm your appointment.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-sm font-semibold text-[#f7f7f7] mb-2">
+                  <label className="block text-sm font-semibold text-gray-900 mb-2">
                     Full Name *
                   </label>
                   <input
@@ -88,13 +88,13 @@ export default function BookingPage() {
                     onChange={handleChange}
                     required
                     placeholder="John Doe"
-                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg text-[#f7f7f7] placeholder-[#666] focus:outline-none focus:ring-2 focus:ring-[#22D3EE]"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-[#f7f7f7] mb-2">
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">
                       Email *
                     </label>
                     <input
@@ -104,11 +104,11 @@ export default function BookingPage() {
                       onChange={handleChange}
                       required
                       placeholder="john@example.com"
-                      className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg text-[#f7f7f7] placeholder-[#666] focus:outline-none focus:ring-2 focus:ring-[#22D3EE]"
+                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-[#f7f7f7] mb-2">
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">
                       Phone *
                     </label>
                     <input
@@ -118,20 +118,20 @@ export default function BookingPage() {
                       onChange={handleChange}
                       required
                       placeholder="+62 123 456 789"
-                      className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg text-[#f7f7f7] placeholder-[#666] focus:outline-none focus:ring-2 focus:ring-[#22D3EE]"
+                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-[#f7f7f7] mb-2">
+                  <label className="block text-sm font-semibold text-gray-900 mb-2">
                     Service *
                   </label>
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg text-[#f7f7f7] focus:outline-none focus:ring-2 focus:ring-[#22D3EE]"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600"
                   >
                     <option value="tour">Tour</option>
                     <option value="dokumen">Document</option>
@@ -142,7 +142,7 @@ export default function BookingPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-[#f7f7f7] mb-2">
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">
                       Preferred Date *
                     </label>
                     <input
@@ -151,11 +151,11 @@ export default function BookingPage() {
                       value={formData.date}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg text-[#f7f7f7] focus:outline-none focus:ring-2 focus:ring-[#22D3EE]"
+                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-[#f7f7f7] mb-2">
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">
                       Preferred Time *
                     </label>
                     <input
@@ -164,13 +164,13 @@ export default function BookingPage() {
                       value={formData.time}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg text-[#f7f7f7] focus:outline-none focus:ring-2 focus:ring-[#22D3EE]"
+                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-[#f7f7f7] mb-2">
+                  <label className="block text-sm font-semibold text-gray-900 mb-2">
                     Additional Message
                   </label>
                   <textarea
@@ -179,11 +179,11 @@ export default function BookingPage() {
                     onChange={handleChange}
                     rows={4}
                     placeholder="Tell us more about your requirements..."
-                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg text-[#f7f7f7] placeholder-[#666] focus:outline-none focus:ring-2 focus:ring-[#22D3EE]"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
                   />
                 </div>
 
-                <button type="submit" className="btn-neon w-full">
+                <button type="submit" className="btn-primary w-full">
                   Submit Booking
                 </button>
               </form>
@@ -192,53 +192,53 @@ export default function BookingPage() {
 
           {/* Info Section */}
           <div className="space-y-6">
-            <div className="card-dark p-8">
-              <h3 className="text-2xl font-bold text-[#f7f7f7] mb-4 flex items-center gap-3">
+            <div className="card-light p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                 <span className="text-3xl">📋</span> Booking Information
               </h3>
-              <p className="text-[#b7b7b7] mb-6">
+              <p className="text-gray-600 mb-6">
                 Fill out the form to request a booking. Our team will review your request and contact you within 24 hours to confirm availability and discuss your specific needs.
               </p>
               <ul className="space-y-4">
                 <li className="flex gap-3">
-                  <span className="text-[#22D3EE] text-xl">✓</span>
-                  <span className="text-[#b7b7b7]">Fast confirmation within 24 hours</span>
+                  <span className="text-red-600 text-xl">✓</span>
+                  <span className="text-gray-600">Fast confirmation within 24 hours</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-[#22D3EE] text-xl">✓</span>
-                  <span className="text-[#b7b7b7]">Flexible scheduling options</span>
+                  <span className="text-red-600 text-xl">✓</span>
+                  <span className="text-gray-600">Flexible scheduling options</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-[#22D3EE] text-xl">✓</span>
-                  <span className="text-[#b7b7b7]">Professional consultation included</span>
+                  <span className="text-red-600 text-xl">✓</span>
+                  <span className="text-gray-600">Professional consultation included</span>
                 </li>
               </ul>
             </div>
 
-            <div className="card-dark p-8">
-              <h3 className="text-2xl font-bold text-[#f7f7f7] mb-4 flex items-center gap-3">
+            <div className="card-light p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                 <span className="text-3xl">📞</span> Contact Options
               </h3>
               <div className="space-y-4">
                 <div>
-                  <p className="text-[#b7b7b7] text-sm mb-2">Email</p>
-                  <a href="mailto:info@ynit.com" className="text-[#22D3EE] font-semibold hover:text-[#06B6D4]">
+                  <p className="text-gray-600 text-sm mb-2">Email</p>
+                  <a href="mailto:info@ynit.com" className="text-red-600 font-semibold hover:text-red-700">
                     info@ynit.com
                   </a>
                 </div>
                 <div>
-                  <p className="text-[#b7b7b7] text-sm mb-2">Phone</p>
-                  <a href="tel:+62123456789" className="text-[#22D3EE] font-semibold hover:text-[#06B6D4]">
+                  <p className="text-gray-600 text-sm mb-2">Phone</p>
+                  <a href="tel:+62123456789" className="text-red-600 font-semibold hover:text-red-700">
                     +62 123 456 789
                   </a>
                 </div>
                 <div>
-                  <p className="text-[#b7b7b7] text-sm mb-2">WhatsApp</p>
+                  <p className="text-gray-600 text-sm mb-2">WhatsApp</p>
                   <a
                     href="https://wa.me/62123456789?text=Hi%20YNIT"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#22D3EE] font-semibold hover:text-[#06B6D4]"
+                    className="text-red-600 font-semibold hover:text-red-700"
                   >
                     Chat Now
                   </a>

@@ -22,7 +22,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="bg-[#111] text-[#f7f7f7]">
+      <body className="bg-white text-gray-900">
         <Header />
         <main className="pt-20">{children}</main>
         <Footer />

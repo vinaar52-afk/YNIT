@@ -9,10 +9,10 @@ export default function DokumenPage() {
       {/* Hero Section */}
       <section className="hero-section pt-20">
         <div className="section-container text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-[#f7f7f7] mb-6">
-            Document <span className="text-[#22D3EE] neon-glow">Services</span>
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            Document <span className="text-red-600 warm-glow">Services</span>
           </h1>
-          <p className="text-xl text-[#b7b7b7] max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Professional document processing and assistance
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function DokumenPage() {
       </Section>
 
       {/* Process Steps */}
-      <Section className="bg-gradient-to-r from-[#111] via-[#0a0a0a] to-[#111]">
+      <Section className="bg-gradient-to-r from-orange-50 via-white to-orange-50">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {[
             { step: '1', title: 'Consult', desc: 'Get expert advice on your requirements' },
@@ -44,10 +44,10 @@ export default function DokumenPage() {
             { step: '3', title: 'Process', desc: 'Fast and efficient processing' },
             { step: '4', title: 'Deliver', desc: 'Receive your documents on time' },
           ].map((item) => (
-            <div key={item.step} className="card-dark text-center py-8">
-              <div className="text-5xl font-bold text-[#22D3EE] mb-4">{item.step}</div>
-              <h3 className="text-xl font-bold text-[#f7f7f7] mb-2">{item.title}</h3>
-              <p className="text-[#b7b7b7] text-sm">{item.desc}</p>
+            <div key={item.step} className="card-light text-center py-8">
+              <div className="text-5xl font-bold text-red-600 mb-4">{item.step}</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+              <p className="text-gray-600 text-sm">{item.desc}</p>
             </div>
           ))}
         </div>

@@ -25,13 +25,13 @@ export default function DokumenDetailPage({ params }: DokumenDetailPageProps) {
   return (
     <>
       {/* Hero with Image */}
-      <section className="relative w-full h-96 bg-gradient-to-b from-[#1a1a1a] to-[#111]">
+      <section className="relative w-full h-96 bg-gradient-to-b from-orange-50 to-white">
         <div className="absolute inset-0">
           <Image
             src={doc.image}
             alt={doc.title}
             fill
-            className="object-cover opacity-50"
+            className="object-cover opacity-30"
             onError={(e) => {
               const img = e.target as HTMLImageElement;
               img.src = '/placeholder.png';
@@ -40,35 +40,35 @@ export default function DokumenDetailPage({ params }: DokumenDetailPageProps) {
         </div>
         <div className="relative z-10 h-full flex items-end pt-20">
           <div className="section-container w-full">
-            <h1 className="text-5xl md:text-6xl font-bold text-[#f7f7f7] mb-4">{doc.title}</h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">{doc.title}</h1>
             <div className="flex flex-wrap gap-4 items-center">
-              <span className="bg-[#22D3EE] text-[#111] px-4 py-2 rounded-lg font-semibold">
+              <span className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">
                 {doc.processingTime}
               </span>
-              <span className="text-3xl font-bold text-[#22D3EE]">{formatCurrency(doc.price)}</span>
+              <span className="text-3xl font-bold text-red-600">{formatCurrency(doc.price)}</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Details Section */}
-      <Section className="bg-[#111]">
+      <Section className="bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             {/* Description */}
-            <div className="card-dark mb-8">
-              <h2 className="text-2xl font-bold text-[#f7f7f7] mb-4">Service Details</h2>
-              <p className="text-[#b7b7b7] leading-relaxed text-lg mb-6">{doc.description}</p>
+            <div className="card-light mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Service Details</h2>
+              <p className="text-gray-600 leading-relaxed text-lg mb-6">{doc.description}</p>
             </div>
 
             {/* Requirements */}
-            <div className="card-dark">
-              <h2 className="text-2xl font-bold text-[#f7f7f7] mb-4">Required Documents</h2>
+            <div className="card-light">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Required Documents</h2>
               <ul className="space-y-3">
                 {doc.requirements.map((req, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="text-[#22D3EE] text-xl mt-1">📋</span>
-                    <span className="text-[#b7b7b7] text-lg">{req}</span>
+                    <span className="text-red-600 text-xl mt-1">📋</span>
+                    <span className="text-gray-600 text-lg">{req}</span>
                   </li>
                 ))}
               </ul>
@@ -77,22 +77,22 @@ export default function DokumenDetailPage({ params }: DokumenDetailPageProps) {
 
           {/* Booking Card */}
           <div>
-            <div className="card-dark sticky top-32 p-8">
-              <h3 className="text-2xl font-bold text-[#f7f7f7] mb-6">Get This Service</h3>
+            <div className="card-light sticky top-32 p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get This Service</h3>
               <div className="space-y-4 mb-6">
                 <div>
-                  <p className="text-[#b7b7b7] text-sm mb-1">Processing Time</p>
-                  <p className="text-[#f7f7f7] font-semibold text-lg">{doc.processingTime}</p>
+                  <p className="text-gray-600 text-sm mb-1">Processing Time</p>
+                  <p className="text-gray-900 font-semibold text-lg">{doc.processingTime}</p>
                 </div>
                 <div>
-                  <p className="text-[#b7b7b7] text-sm mb-1">Price</p>
-                  <p className="text-[#22D3EE] font-bold text-2xl">{formatCurrency(doc.price)}</p>
+                  <p className="text-gray-600 text-sm mb-1">Price</p>
+                  <p className="text-red-600 font-bold text-2xl">{formatCurrency(doc.price)}</p>
                 </div>
               </div>
               <Link href="/booking">
-                <button className="btn-neon w-full mb-4">Start Now</button>
+                <button className="btn-primary w-full mb-4">Start Now</button>
               </Link>
-              <button className="btn-neon-outline w-full">Get Consultation</button>
+              <button className="btn-outline w-full">Get Consultation</button>
             </div>
           </div>
         </div>
