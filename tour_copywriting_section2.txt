@@ -1,0 +1,438 @@
+================================================================================
+SECTION 2: DOKUMEN / FORMAL INFO
+Complete Copywriting Draft for React Components
+================================================================================
+Last Updated: January 10, 2026
+Format: Ready for component development (Page1Doc - Page6Doc)
+================================================================================
+
+
+================================================================================
+PAGE 1: SYARAT & KETENTUAN LAYANAN
+================================================================================
+
+HEADING:
+Syarat & Ketentuan Layanan Private Tour
+
+DESKRIPSI:
+Terima kasih telah memilih layanan private tour kami. Sebelum memulai perjalanan 
+impian Anda, harap membaca dan memahami syarat & ketentuan berikut. Dengan melakukan 
+pemesanan, Anda setuju untuk mematuhi semua ketentuan yang berlaku.
+
+---
+
+KONTEN UTAMA:
+
+1. RESERVASI & PEMBAYARAN
+   • Pemesanan dianggap valid setelah pembayaran diterima dan dikonfirmasi
+   • Tersedia berbagai metode pembayaran: transfer bank, kartu kredit, atau payment gateway
+   • Pembatalan 7 hari sebelum tur: refund 50%
+   • Pembatalan kurang dari 7 hari: non-refundable
+   • Perubahan jadwal tur harus dikonfirmasi minimal 3 hari sebelumnya
+
+2. DURASI & JADWAL
+   • Jam mulai tur dapat disesuaikan sesuai kesepakatan saat booking
+   • Durasi tur dapat berubah tergantung kondisi lalu lintas, cuaca, atau permintaan khusus
+   • Overtime dikenakan biaya tambahan per jam sesuai tarif yang berlaku
+
+3. TRANSPORTASI
+   • Kendaraan sesuai paket disediakan lengkap dengan bahan bakar dan biaya parkir
+   • Pengemudi berpengalaman dan profesional siap melayani perjalanan Anda
+   • Overtime atau penggunaan kendaraan di luar jam normal akan dikenakan biaya tambahan
+
+4. GUIDE & LAYANAN TAMBAHAN
+   • Guide berbahasa Indonesia tersedia sesuai paket yang dipilih
+   • Fotografer profesional dapat dipesan terpisah dengan biaya tambahan
+   • Layanan khusus lainnya dapat didiskusikan sebelum booking
+
+5. TANGGUNG JAWAB
+   • Penumpang bertanggung jawab atas keselamatan diri sendiri dan barang pribadi
+   • Operator tidak bertanggung jawab atas kerugian akibat keadaan di luar kendali (force majeure)
+   • Asuransi perjalanan direkomendasikan untuk perlindungan maksimal
+
+CTA BUTTON:
+[ Saya Mengerti & Setuju dengan Syarat ]
+Link: /booking atau /terms-accepted
+
+
+================================================================================
+PAGE 2: PANDUAN PERJALANAN & TRAVEL GUIDE
+================================================================================
+
+HEADING:
+Panduan Perjalanan Private Tour
+
+DESKRIPSI:
+Buat perjalanan Anda lebih nyaman dan berkesan dengan panduan praktis kami. 
+Ikuti tips berikut untuk pengalaman tour yang optimal dan memorable.
+
+---
+
+KONTEN UTAMA:
+
+PERSIAPAN SEBELUM TUR:
+✓ Kenakan pakaian nyaman dan sesuai dengan cuaca/musim
+✓ Bawa air minum, topi, sunscreen, dan kamera untuk dokumentasi
+✓ Siapkan tiket masuk wisata atau dokumen identitas jika diperlukan untuk destinasi tertentu
+✓ Informasikan kebutuhan khusus, alergi makanan, atau kondisi kesehatan sebelumnya
+✓ Hormati budaya dan tradisi lokal di setiap destinasi yang Anda kunjungi
+
+---
+
+DESTINASI POPULER YANG DAPAT DIKUNJUNGI:
+
+Istanbul:
+  Hagia Sophia, Blue Mosque, Grand Bazaar, Taksim Square, galeri seni, 
+  dan kawasan modern
+
+Bursa:
+  Gunung Uludağ, Green Mosque, Grand Bazaar lokal, pemandian termal
+
+Antalya:
+  Old Town (Kaleiçi), Hadrian Gate, waterfront marina, pantai indah
+
+Trabzon:
+  Danau Uzungöl, Sumela Monastery, pemandangan alam spektakuler
+
+Sapanca:
+  Danau Sapanca, hutan Kartepe, area hijau untuk relaksasi
+
+---
+
+TIPS TAMBAHAN UNTUK PENGALAMAN MAKSIMAL:
+💡 Tiba 15 menit lebih awal sebelum tur dimulai untuk persiapan yang lebih baik
+💡 Bawa powerbank untuk memastikan perangkat selalu terisi saat berfoto
+💡 Tanyakan kepada guide tentang spot foto terbaik dan rekomendasi makan lokal
+💡 Nikmati setiap momen dan buat kenangan indah bersama kami tanpa terburu-buru
+
+CTA BUTTON:
+[ Download Travel Guide Lengkap ]
+Link: /dokumen/download-guide
+
+
+================================================================================
+PAGE 3: FORMULIR PEMESANAN
+================================================================================
+
+HEADING:
+Pesan Private Tour Anda Sekarang
+
+DESKRIPSI:
+Isi formulir berikut untuk memesan pengalaman tour privat yang disesuaikan 
+dengan kebutuhan Anda. Pastikan semua data terisi dengan benar agar proses 
+reservasi berjalan lancar dan tim kami dapat menghubungi Anda dengan informasi lengkap.
+
+---
+
+FORM FIELDS:
+
+1. Nama Lengkap
+   Type: Text Input
+   Placeholder: "Masukkan nama lengkap Anda"
+   Required: Yes
+
+2. Email
+   Type: Email Input
+   Placeholder: "Masukkan alamat email Anda"
+   Required: Yes
+
+3. Nomor HP / WhatsApp
+   Type: Tel Input
+   Placeholder: "+62 81234567890"
+   Required: Yes
+
+4. Paket Pilihan
+   Type: Select Dropdown
+   Options:
+     - Istanbul Private Tour – Hanya Transportasi
+     - Istanbul + Guide Mahasiswa Indonesia
+     - Istanbul + Guide Lokal Turki
+     - Bursa – Uludağ Full Day
+     - Antalya Private City Tour
+     - Trabzon – Uzungöl 2D1N
+     - Sapanca – Kartepe Full Day
+     - Airport Transfer & Fotografer Profesional
+   Required: Yes
+
+5. Jumlah Penumpang
+   Type: Number Input
+   Placeholder: "Contoh: 4"
+   Required: Yes
+   Min: 1
+
+6. Tanggal & Jam Tur
+   Type: DateTime Input
+   Required: Yes
+
+7. Durasi yang Diinginkan
+   Type: Select Dropdown
+   Options:
+     - 4 Jam
+     - 8 Jam
+     - 10 Jam
+     - 12 Jam
+     - Full Day
+     - Custom / Lainnya
+   Required: Yes
+
+8. Catatan Khusus / Permintaan Spesial
+   Type: Textarea
+   Placeholder: "Jelaskan kebutuhan khusus, preferensi destinasi, alergi makanan, 
+                 atau permintaan lainnya..."
+   Rows: 5
+   Required: No
+
+---
+
+INSTRUKSI FORMULIR:
+Setelah formulir diisi, Anda akan menerima konfirmasi pemesanan melalui email 
+dan WhatsApp. Tim kami akan menghubungi untuk meng-confirm detail dan metode 
+pembayaran dalam waktu 1-2 jam kerja.
+
+CTA BUTTON:
+[ Kirim Pemesanan ]
+Link: /booking/submit atau /dokumen/konfirmasi-pemesanan
+
+
+================================================================================
+PAGE 4: INFORMASI PEMBAYARAN & METODE
+================================================================================
+
+HEADING:
+Metode Pembayaran & Prosedur
+
+DESKRIPSI:
+Kami menyediakan berbagai metode pembayaran yang aman dan fleksibel untuk 
+kemudahan Anda. Setelah mengisi formulir pemesanan, lakukan pembayaran sesuai 
+pilihan berikut. Semua metode dilindungi dengan enkripsi tingkat tinggi untuk 
+keamanan data Anda.
+
+---
+
+METODE PEMBAYARAN TERSEDIA:
+
+1. TRANSFER BANK (INDONESIA)
+   🏦
+   • Bank lokal Indonesia dengan rekening terverifikasi
+   • Prosesnya cepat, aman, dan terpercaya
+   • Bukti transfer dikirim via email/WhatsApp untuk konfirmasi
+
+2. KARTU KREDIT / DEBIT
+   💳
+   • Visa, Mastercard, JCB accepted
+   • Sistem pembayaran terenkripsi dan terpercaya
+   • Dapat langsung dikonfirmasi real-time
+
+3. PAYMENT GATEWAY ONLINE
+   💻
+   • Midtrans, PayPal, dan platform pembayaran digital lainnya
+   • Proses instant dan mudah dari mana saja
+   • Automatic confirmation setelah transaksi berhasil
+
+---
+
+CATATAN PENTING:
+• Harap upload bukti pembayaran agar reservasi diproses lebih cepat dan akurat
+• Pembayaran dianggap sah setelah diverifikasi oleh tim kami
+• Konfirmasi pembayaran biasanya diterima dalam 1-2 jam kerja
+• Jangan lupa simpan nomor referensi pembayaran Anda untuk keperluan tracking
+• Semua transaksi dilindungi dengan enkripsi SSL 256-bit untuk keamanan maksimal
+
+---
+
+INFO BOX - PERTANYAAN TENTANG PEMBAYARAN?
+Tim dukungan pelanggan kami siap membantu Anda 24/7. Hubungi kami melalui:
+  WhatsApp: +62 ...
+  Email: info@yourneedinturkey.com
+
+CTA BUTTON:
+[ Upload Bukti Pembayaran ]
+Link: /dokumen/upload-bukti-pembayaran
+
+
+================================================================================
+PAGE 5: FAQ – PERTANYAAN UMUM
+================================================================================
+
+HEADING:
+Pertanyaan yang Sering Diajukan (FAQ)
+
+DESKRIPSI:
+Temukan jawaban atas pertanyaan-pertanyaan umum tentang layanan private tour kami. 
+Jika pertanyaan Anda belum terjawab, hubungi tim kami kapan saja untuk mendapatkan 
+bantuan lebih lanjut.
+
+---
+
+FAQ ITEMS (Expandable/Accordion Format):
+
+Q1: Apakah harga dihitung per orang atau per mobil?
+A:  Semua paket kami dihitung per mobil, bukan per orang. Ini berarti Anda dapat 
+    berbagi biaya dengan keluarga atau teman, semakin banyak penumpang, semakin 
+    hemat per orang. Paket dengan guide tertentu mungkin ada biaya tambahan yang 
+    akan dijelaskan saat booking.
+
+Q2: Apakah bisa request destinasi tertentu atau customize rute?
+A:  Tentu saja! Semua tur kami bersifat privat dan fleksibel. Anda dapat menyesuaikan 
+    rute, menambah/mengurangi destinasi, atau meminta aktivitas khusus. Biaya akan 
+    disesuaikan tergantung perubahan yang diminta. Hubungi tim kami untuk diskusi 
+    lebih detail.
+
+Q3: Bagaimana jika tur mengalami keterlambatan karena macet atau cuaca?
+A:  Keterlambatan karena kondisi di luar kendali adalah risiko normal dalam 
+    perjalanan. Overtime akan dikenakan biaya tambahan per jam, tetapi driver kami 
+    akan proaktif menyesuaikan rute agar semua destinasi utama tetap bisa dikunjungi. 
+    Kami prioritaskan kepuasan Anda.
+
+Q4: Apakah guide tersedia berbahasa Indonesia?
+A:  Ya, kami menyediakan opsi guide dengan berbagai bahasa termasuk Indonesia. 
+    Pilihan mencakup guide mahasiswa Indonesia lokal atau guide Turki yang fasih 
+    bahasa Indonesia, tergantung paket yang Anda pilih. Anda bisa memilih preferensi 
+    saat booking.
+
+Q5: Bagaimana jika saya memerlukan layanan fotografer profesional?
+A:  Fotografer profesional dapat dipesan terpisah dengan biaya tambahan. Paket 
+    fotografi kami tersedia dalam durasi 5 jam atau 10 jam, termasuk raw file, 
+    7 foto hasil edit profesional, dan video highlight yang bisa langsung dibagikan 
+    di media sosial.
+
+Q6: Apakah ada minimum order atau minimum durasi tur?
+A:  Tidak ada minimum durasi ketat, tetapi kebanyakan paket dirancang untuk 8-10 jam. 
+    Tur yang lebih singkat dapat diakomodasi dengan biaya yang disesuaikan. Hubungi 
+    kami untuk detail lebih lanjut tentang opsi custom.
+
+Q7: Apa yang termasuk dalam harga paket?
+A:  Harga sudah termasuk transportasi (kendaraan + bahan bakar + parkir), driver 
+    profesional, dan guide (jika paket yang dipilih). Tiket masuk wisata, makanan, 
+    dan layanan tambahan bersifat terpisah dan optional sesuai preferensi Anda.
+
+---
+
+INFO BOX - MASIH ADA PERTANYAAN?
+Tim dukungan pelanggan kami siap membantu Anda dengan senang hati. Hubungi kami 
+kapan saja melalui saluran yang tersedia.
+
+CTA BUTTON:
+[ Hubungi Kami Sekarang ]
+Link: /dokumen/kontak-bantuan
+
+
+================================================================================
+PAGE 6: KONTAK & DUKUNGAN PELANGGAN
+================================================================================
+
+HEADING:
+Kontak & Dukungan Pelanggan
+
+DESKRIPSI:
+Tim kami siap membantu Anda 24/7 untuk menjawab pertanyaan, memberikan rekomendasi, 
+atau menangani kebutuhan khusus. Jangan ragu untuk menghubungi kami melalui saluran 
+berikut. Respons cepat dalam 30 menit (jam kerja) dijamin!
+
+---
+
+INFORMASI KONTAK UTAMA:
+
+WHATSAPP (FASTEST RESPONSE)
+💬
++62 ...
+• Chat langsung dengan tim kami untuk pertanyaan cepat dan booking instant
+• Tersedia untuk semi-emergency dan pertanyaan mendesak
+
+EMAIL
+✉️
+info@yourneedinturkey.com
+• Untuk pertanyaan detail, feedback, atau keluhan formal
+• Response dalam 2-4 jam kerja
+
+---
+
+JAM OPERASIONAL:
+Senin – Minggu: 08:00 – 20:00 WIB
+Untuk Emergency: Support 24/7 tersedia via WhatsApp
+
+---
+
+IKUTI KAMI DI MEDIA SOSIAL:
+
+INSTAGRAM
+📸
+@yourneedinturkey
+Galeri foto destinasi, tips travel, dan behind-the-scenes
+
+FACEBOOK
+👥
+YourNeedinTurkey Official
+Update terbaru, promo, dan testimoni pelanggan
+
+TIKTOK
+🎬
+@yourneedinturkey
+Video petualangan, tips praktis, dan konten viral
+
+---
+
+QUICK MESSAGE FORM (Optional):
+Fields:
+  1. Nama Anda (Text Input) - Required
+  2. Email (Email Input) - Required
+  3. Pesan (Textarea, 5 rows) - Required
+     Placeholder: "Jelaskan pertanyaan atau kebutuhan Anda..."
+
+Button: [ Kirim Pesan ]
+
+---
+
+ALAMAT KANTOR (Optional):
+[Optional: Masukkan alamat kantor jika diperlukan]
+
+CTA BUTTON:
+[ Hubungi Kami Sekarang ]
+Link: /booking atau /dokumen/kontak
+
+
+================================================================================
+ADDITIONAL NOTES FOR DEVELOPERS
+================================================================================
+
+IMAGE PLACEHOLDERS:
+- Page 1: /images/terms-condition.jpg
+- Page 2: /images/travel-guide.jpg
+- Page 3: /images/booking-form.jpg
+- Page 4: /images/payment-info.jpg
+- Page 5: /images/faq.jpg
+- Page 6: /images/contact-support.jpg
+
+STYLING NOTES:
+- Use Tailwind CSS for all styling
+- Primary color: red-600 (#DC2626)
+- Secondary color: orange-50 (background)
+- Text: gray-900 for headings, gray-700 for body
+- Buttons: Red background with white text, hover effect
+
+COMPONENT NAMES:
+- Page1Doc.tsx (Terms & Conditions)
+- Page2Doc.tsx (Travel Guide)
+- Page3Doc.tsx (Booking Form)
+- Page4Doc.tsx (Payment Info)
+- Page5Doc.tsx (FAQ)
+- Page6Doc.tsx (Contact & Support)
+
+ROUTING SUGGESTIONS:
+- /dokumen/syarat-ketentuan (Page 1)
+- /dokumen/panduan-perjalanan (Page 2)
+- /dokumen/formulir-pemesanan (Page 3)
+- /dokumen/informasi-pembayaran (Page 4)
+- /dokumen/faq (Page 5)
+- /dokumen/kontak-bantuan (Page 6)
+
+TONE & STYLE:
+- Friendly, professional, down-to-earth, modern
+- Use contractions (bisa, jangan, dll.)
+- Mix of short and medium-length sentences
+- Clear hierarchy and easy scanning
+- Action-oriented CTAs
+
+================================================================================
+END OF SECTION 2 COPYWRITING
+================================================================================

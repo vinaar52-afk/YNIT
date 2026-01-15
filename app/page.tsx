@@ -6,12 +6,14 @@ import { dokumen } from '@/data/dokumen';
 import { study } from '@/data/study';
 import { medical } from '@/data/medical';
 import Link from 'next/link';
+import { generateWhatsAppLink } from '@/lib/whatsapp';
 
 export default function Home() {
   const featuredTours = tours.slice(0, 2);
   const featuredDokumen = dokumen.slice(0, 2);
   const featuredStudy = study.slice(0, 2);
   const featuredMedical = medical.slice(0, 2);
+  const whatsappLink = generateWhatsAppLink('62123456789', 'Halo, saya ingin tanya dulu tentang layanan YNIT');
 
   return (
     <>
@@ -19,163 +21,131 @@ export default function Home() {
       <section className="hero-section pt-20">
         <div className="section-container text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-            Welcome to <span className="text-red-600 warm-glow">YNIT</span>
+            Semua rencana pentingmu, kami bantu urus.
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Your trusted partner for exceptional tour experiences, document services, educational programs, and premium medical care
+            Dari perjalanan, dokumen, studi, sampai layanan medical aesthetic — YNIT ada buat nemenin prosesnya, pelan tapi pasti.
           </p>
-          <Link href="/booking">
-            <button className="btn-primary text-lg">
-              Get Started
-            </button>
-          </Link>
+          <div className="flex gap-4 justify-center">
+            <Link href="/tour">
+              <button className="btn-primary text-lg">
+                Lihat layanan
+              </button>
+            </Link>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              <button className="btn-secondary text-lg">
+                Tanya dulu →
+              </button>
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Service Categories */}
-      <Section title="Our Services" subtitle="Explore our comprehensive range of professional services">
+      <Section title="Pilih kebutuhanmu." subtitle="Kamu fokus ke tujuanmu. Urusan teknis, biar kami yang bantu.">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Link href="/tour">
             <div className="card-light cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
-              <div className="text-5xl mb-4">✈️</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Tour</h3>
-              <p className="text-gray-600 text-sm">Explore amazing destinations</p>
+              <p className="text-gray-600 text-sm">Liburan tanpa ribet. Tinggal berangkat.</p>
             </div>
           </Link>
 
           <Link href="/dokumen">
             <div className="card-light cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
-              <div className="text-5xl mb-4">📄</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Dokumen</h3>
-              <p className="text-gray-600 text-sm">Professional document services</p>
+              <p className="text-gray-600 text-sm">Visa, paspor, dan dokumen lain — jelas alurnya, jelas biayanya.</p>
             </div>
           </Link>
 
           <Link href="/study">
             <div className="card-light cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
-              <div className="text-5xl mb-4">📚</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Study</h3>
-              <p className="text-gray-600 text-sm">Quality education programs</p>
+              <p className="text-gray-600 text-sm">Program belajar yang masuk akal dan bisa dijalani.</p>
             </div>
           </Link>
 
-          <Link href="/medical">
+          <Link href="/medical-aesthetic">
             <div className="card-light cursor-pointer h-full flex flex-col items-center justify-center py-8 text-center">
-              <div className="text-5xl mb-4">⚕️</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Medical</h3>
-              <p className="text-gray-600 text-sm">Premium healthcare services</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Medical Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Perawatan dan layanan estetika dengan proses yang transparan.</p>
             </div>
           </Link>
         </div>
       </Section>
 
       {/* Featured Tours */}
-      <Section title="Featured Tours" subtitle="Discover our most popular tour packages">
+      <Section title="Perjalanan yang sering dipilih" subtitle="Beberapa opsi yang biasanya jadi awal cerita orang-orang.">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredTours.map((tour) => (
+          {featuredTours.map((tour, index) => (
             <Card
               key={tour.id}
               title={tour.title}
               description={tour.shortDesc}
-              href={`/tour/${tour.slug}`}
+              href={`/tour/page${index + 1}`}
               price={tour.price}
               image={tour.image}
               badge={tour.duration}
+              type="tour"
             />
           ))}
-          {featuredTours.map((tour) => (
-            <Card
-              key={`alt-${tour.id}`}
-              title={tour.title}
-              description={tour.shortDesc}
-              href={`/tour/${tour.slug}`}
-              price={tour.price}
-              image={tour.image}
-              badge={tour.duration}
-            />
-          ))}
+        </div>
+        <div className="mt-8 text-center">
+          <Link href="/tour">
+            <button className="btn-secondary">Lihat semua perjalanan →</button>
+          </Link>
         </div>
       </Section>
 
       {/* Featured Documents */}
-      <Section title="Document Services" subtitle="Professional document processing made easy">
+      <Section title="Urusan dokumen, tanpa drama" subtitle="Proses rapi, info jelas, dan bisa dipantau.">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredDokumen.map((doc) => (
+          {featuredDokumen.map((doc, index) => (
             <Card
               key={doc.id}
               title={doc.title}
               description={doc.shortDesc}
-              href={`/dokumen/${doc.slug}`}
+              href={`/dokumen/page${index + 1}`}
               price={doc.price}
               image={doc.image}
               badge={doc.processingTime}
-            />
-          ))}
-          {featuredDokumen.map((doc) => (
-            <Card
-              key={`alt-${doc.id}`}
-              title={doc.title}
-              description={doc.shortDesc}
-              href={`/dokumen/${doc.slug}`}
-              price={doc.price}
-              image={doc.image}
-              badge={doc.processingTime}
+              type="dokumen"
             />
           ))}
         </div>
       </Section>
 
       {/* Featured Study Programs */}
-      <Section title="Study Programs" subtitle="Invest in your education and future">
+      <Section title="Belajar buat naik level" subtitle="Bukan sekadar ikut tren, tapi benar-benar kepakai.">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredStudy.map((prog) => (
+          {featuredStudy.map((prog, index) => (
             <Card
               key={prog.id}
               title={prog.title}
               description={prog.shortDesc}
-              href={`/study/${prog.slug}`}
+              href={`/study/page${index + 1}`}
               price={prog.price}
               image={prog.image}
               badge={prog.duration}
-            />
-          ))}
-          {featuredStudy.map((prog) => (
-            <Card
-              key={`alt-${prog.id}`}
-              title={prog.title}
-              description={prog.shortDesc}
-              href={`/study/${prog.slug}`}
-              price={prog.price}
-              image={prog.image}
-              badge={prog.duration}
+              type="study"
             />
           ))}
         </div>
       </Section>
 
       {/* Featured Medical */}
-      <Section title="Medical Services" subtitle="Your health and wellness is our priority">
+      <Section title="Perawatan yang bikin lebih percaya diri" subtitle="Kami bantu carikan layanan yang jelas dan masuk akal.">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredMedical.map((med) => (
+          {featuredMedical.map((med, index) => (
             <Card
               key={med.id}
               title={med.title}
               description={med.shortDesc}
-              href={`/medical/${med.slug}`}
+              href={`/medical-aesthetic/page${index + 1}`}
               price={med.price}
               image={med.image}
               badge={med.duration}
-            />
-          ))}
-          {featuredMedical.map((med) => (
-            <Card
-              key={`alt-${med.id}`}
-              title={med.title}
-              description={med.shortDesc}
-              href={`/medical/${med.slug}`}
-              price={med.price}
-              image={med.image}
-              badge={med.duration}
+              type="medical"
             />
           ))}
         </div>
@@ -183,10 +153,10 @@ export default function Home() {
 
       {/* CTA Section */}
       <CTA
-        title="Ready to Experience Excellence?"
-        description="Join thousands of satisfied customers who trust YNIT for their needs"
-        buttonText="Book Your Service"
-        buttonHref="/booking"
+        title="Mulai dari yang kamu butuhkan sekarang."
+        description="Kamu nggak harus langsung pesan. Lihat-lihat dulu juga nggak apa-apa."
+        buttonText="Lihat semua layanan"
+        buttonHref="/tour"
       />
     </>
   );

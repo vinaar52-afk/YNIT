@@ -10,8 +10,8 @@ export default function Section({ children, className = '', title, subtitle }: S
     <section className={`section-container ${className}`}>
       {(title || subtitle) && (
         <div className="mb-12 text-center">
-          {title && <h2 className="text-4xl font-bold text-gray-900 mb-4">{title}</h2>}
-          {subtitle && <p className="text-lg text-gray-600 max-w-2xl mx-auto">{subtitle}</p>}
+          {title && <h2 className="text-4xl font-bold text-warmBlack mb-4 font-heading">{title}</h2>}
+          {subtitle && <p className="text-lg text-warmGray-700 max-w-2xl mx-auto font-body">{subtitle}</p>}
         </div>
       )}
       {children}

@@ -21,15 +21,16 @@ export default function DokumenPage() {
       {/* Documents Grid */}
       <Section title="Our Document Services" subtitle="Fast, reliable, and professional document processing">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {dokumen.map((doc) => (
+          {dokumen.map((doc, index) => (
             <Card
               key={doc.id}
               title={doc.title}
               description={doc.shortDesc}
-              href={`/dokumen/${doc.slug}`}
+              href={`/dokumen/page${index + 1}`}
               price={doc.price}
               image={doc.image}
               badge={doc.processingTime}
+              type="dokumen"
             />
           ))}
         </div>

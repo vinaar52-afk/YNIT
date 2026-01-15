@@ -22,15 +22,16 @@ export default function TourPage() {
       {/* Tours Grid */}
       <Section title="Our Tour Packages" subtitle="Choose from our collection of unforgettable experiences">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {tours.map((tour) => (
+          {tours.map((tour, index) => (
             <Card
               key={tour.id}
               title={tour.title}
               description={tour.shortDesc}
-              href={`/tour/${tour.slug}`}
+              href={`/tour/page${index + 1}`}
               price={tour.price}
               image={tour.image}
               badge={tour.duration}
+              type="tour"
             />
           ))}
         </div>

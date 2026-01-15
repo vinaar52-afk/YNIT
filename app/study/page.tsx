@@ -21,15 +21,16 @@ export default function StudyPage() {
       {/* Study Programs Grid */}
       <Section title="Our Programs" subtitle="Comprehensive courses designed for your success">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {study.map((prog) => (
+          {study.map((prog, index) => (
             <Card
               key={prog.id}
               title={prog.title}
               description={prog.shortDesc}
-              href={`/study/${prog.slug}`}
+              href={`/study/page${index + 1}`}
               price={prog.price}
               image={prog.image}
               badge={prog.duration}
+              type="study"
             />
           ))}
         </div>
